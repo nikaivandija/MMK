@@ -11,18 +11,18 @@
 		font-weight:200;
 		font-style: oblique;
 		color: darkslategray;
-		background-color:beige;
+		background-color:#FED2D8;
 	}
 	p1 {
 		font-family:"Parkinsans", sans-serif ;
 		font-weight: 400;
 		font-style: normal;
 		color:cadetblue;
-		background-color: cornsilk;
+		background-color: #FED2D8;
 	}
 	body {
 		font-family:"Parkinsans", sans-serif;
-		font-weight: 100;
+		font-weight: 400;
 		font-style: normal;
 		color: dimgrey;
 		background-color: lightpink; 
@@ -42,13 +42,49 @@
 		background:deeppink;
 		padding: 10px;
 	 }
-	ul {
+	ul li {
 		color:cornflowerblue;
 		list-style-type: square;
 	  }
-	ol {
+	ol li {
 		color: darkslateblue;
 	  }
+	form {
+		font-family: "Parkinsans", sans-serif;
+		width:600px;
+		background: #FED2D8;
+		border: 3px #117585;
+	}
+	input[type=submit] {
+		font-size:15px;
+		font-weight:bold;
+		background: #79C8C7;	
+	}
+	input[type=reset] {
+		font-size:15px;
+		font-weight:bold;
+		background: #79C8C7;	
+	}
+	input[type=button] {
+		font-size:15px;
+		font-weight:bold;
+		background: #41898B;	
+		border-radius: 5px;
+		box-shadow: 1px 2px 3px gray;
+		padding: 8px;
+		border:#421B47
+	}
+	input[type=radio] {
+		align-self: baseline}
+	}
+	fieldset{
+		width:600px;
+		background: #BDE5E7;
+		border: 3px #117585;
+	}
+	legend {
+		color:#DD129B;
+	}
 </style>
 </head>
 
@@ -57,7 +93,7 @@
 	<br>
 	<p1>Ovo je kolegij Multimedijske komunikacije.</p1>
 	<br>
-	Kolegij se održava na Grafičkom fakultetu.
+	<p>Kolegij se održava na Grafičkom fakultetu.</p>
 	<br>
 <p>Na fakultetu postoje tri dvorane:</p>	
 <ul>
@@ -74,13 +110,80 @@
 	</ol>
 	<br>
 <p><em>Naš fakultet ima čak i <span>vlastitog mačka.</span></em></p>
-<p>Sada je <sub>45</sub><sup>2</sup> godina.</p>
+<p><strong>Sada je <sub>45</sub><sup>2</sup> godina.</strong></p>
 	
 <ul>
 	<li1>O fakultetu </li1>
 	<li1>O mačku </li1>
 	<li1>O kolegijima </li1>
 	</ul>
+<form action="Prijava">
+	<h4>Prijava</h4>
+	Ime:<input type="text" name="ime"><br>
+	Prezime:<input type="text" name="prezime"><br>
+	Lozinka:<input type="password" name="lozinka" maxlenght="8"><br>
+	<input type="submit" value="Pošalji">
+	<input type="reset" value="Poništi"><br>
+	</form>
+	 
+<form>
+	<h4>Spol</h4> 
+	<input type="radio" name="spol" value="Žensko">Žensko<br>
+	<input type="radio" name="spol" value="Muško">Muško<br>
+	<input type="submit" value="Pošalji">
+	<input type="reset" value="Poništi"><br>
+	</form>
+	
+<br>
+<form action="Gumb">
+	<input type="button" value="Gumbić" onclick="alert('Ovo je gumbić.')">
+	</form>
+	
+<form>
+	<h4>Zanimanje</h4> 
+	<label for="Studenti"> Studenti  </label>
+    <input type="radio" name="zanimanje" id="studenti" value="studenti"><br>
+	<label for="Profesori"> Profesori  </label>
+    <input type="radio" name="zanimanje" id="profesori" value="profesori"><br>
+	<label for="Ostali djelatnici"> Ostali djelatnici  </label>
+    <input type="radio" name="zanimanje" id="ostali djelatnici" value="ostali djelatnici"><br>
+	</form>
+	
+<form>
+	<h4>Odaberite najdraže voće</h4>
+	<select name="voće">
+	<option name="kruška">Kruška</option>
+	<option name="jabuka">Jabuka</option>
+	<option name="šljiva">Šljiva</option>
+	</select>
+	</form>
+	
+<form action="Povrće">
+	<h4>Odaberite najdraže povrće</h4>
+	<input list="povrće" name="povrće">
+	<datalist id="povrće">
+	<option value="MRKVA" name="mrkva"></option>
+	<option value="PERŠIN" name="peršin"></option>
+	<option value="KRUMPIR" name="krumpir"></option>
+	</datalist>
+	</form>
+	
+<br>
+<form action="Obavezno">
+	<fieldset>
+	<legend><b>Obavezna polja</b></legend>
+	Datum rođenja <input type="date" name="datum rođenja" size="30px"> <br>
+	OIB <input type="text" name="oib" size="30px"> <br>
+	JMBAG <input type="text" name="jmbag" size="30px"> <br>
+	<input type="submit" value="Pošalji">
+	<input type="reset" value="Poništi"><br>
+	</fieldset>
+	</form>
+	
+<form>
+	<h4>Vaša stranica </h4>
+	<input type="url" name="webpage" placeholder="webpage">
+	</form>
 	
 </body>
 </html>
